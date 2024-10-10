@@ -14,9 +14,12 @@
   "license": "MIT",
   "description": "",
   "devDependencies": {
+    "@gied-ui/eslint-config": "*",
     "@gied-ui/tokens": "*",
     "@gied-ui/ts-config": "*",
-    "@gied-ui/eslint-config": "*",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.0",
+    "react": "^18.3.1",
     "tsup": "^8.3.0",
     "typescript": "^5.6.3"
   }
