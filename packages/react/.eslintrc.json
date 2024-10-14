@@ -1,3 +1,3 @@
 {
-  "extends": "@gied-ui/eslint-config"
+  "extends": ["@gied-ui/eslint-config"]
 }

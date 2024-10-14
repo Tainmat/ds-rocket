@@ -7,7 +7,7 @@ module.exports = {
     "plugin:react/recommended",
     "airbnb",
     "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended",
+    "plugin:prettier/recommended", // Garante que Prettier prevaleça sobre outras regras de formatação
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
@@ -28,12 +28,12 @@ module.exports = {
       ],
       plugins: ["@typescript-eslint"],
       rules: {
-        "@typescript-eslint/explicit-module-boundary-types": ["off"],
-        "@typescript-eslint/no-unused-vars": ["error"],
-        "@typescript-eslint/no-explicit-any": ["off"],
-        "no-console": ["off"],
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "@typescript-eslint/no-unused-vars": "error",
+        "@typescript-eslint/no-explicit-any": "off",
+        "no-console": "off",
         "function-call-argument-newline": ["error", "consistent"],
-        "multiline-ternary": ["off", "never"],
+        "multiline-ternary": "off",
         camelcase: ["off", { ignoreDestructuring: true }],
       },
     },
@@ -50,7 +50,6 @@ module.exports = {
     "no-plusplus": "off",
     "no-nested-ternary": "off",
     "@typescript-eslint/no-unused-vars": "error",
-    "@typescript-eslint/camelcase": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/no-explicit-any": "off",
     "react/react-in-jsx-scope": "off",
@@ -60,20 +59,29 @@ module.exports = {
     "react/no-danger": "off",
     "react/no-array-index-key": "off",
     "react/function-component-definition": [
-      2,
+      "error",
       {
         namedComponents: "function-declaration",
       },
     ],
     "react/jsx-filename-extension": [
-      1,
+      "warn",
       {
         extensions: [".tsx", ".jsx"],
       },
     ],
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-    "prettier/prettier": "error",
+    "prettier/prettier": [
+      "error",
+      {
+        semi: false, // Garante que Prettier e ESLint sigam a mesma regra
+        singleQuote: true,
+        trailingComma: "none",
+        arrowParens: "avoid",
+        endOfLine: "auto",
+      },
+    ],
     "import/no-extraneous-dependencies": "off",
     "import/prefer-default-export": "off",
     "import/no-duplicates": "off",
@@ -95,4 +103,4 @@ module.exports = {
       },
     },
   },
-};
+}
